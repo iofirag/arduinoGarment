@@ -14,8 +14,8 @@ int batteryled3 = 5;
 int batteryled4 = 6;
 int batteryled5 = 7;
 
-int vibPin = 10;
-int ledPin = 11;
+int vibPin = 9;
+//int ledPin = 11;
 
 //first time checker
 boolean firstTimeRun=true;
@@ -26,7 +26,7 @@ int pihukCounter=0;
 const int pihukCounterMAX = 2;
 
 int flexSensor = 3;
-int const FLEX_MAX_TIRED=2;
+float const FLEX_MAX_TIRED=8.2;
 
 int const MAXTraining=2;
 
@@ -82,8 +82,8 @@ void setup()
    pinMode(vibPin, OUTPUT);
    analogWrite(vibPin, LOW);
    
-    pinMode(ledPin, OUTPUT);
-    analogWrite(ledPin, LOW);
+    //pinMode(ledPin, OUTPUT);
+    //analogWrite(ledPin, LOW);
 
   //--Accelerometer-----------------------------
   Serial.begin(9600);
@@ -223,11 +223,11 @@ void loop()
                              digitalWrite(batteryled5, HIGH);
                             
                             // fade in the led
-                            for(int fadeValue = 0 ; fadeValue <= 255; fadeValue +=5) { 
-                                    analogWrite(ledPin, fadeValue);
-                                    delay(30);                            
-                            } 
-                            analogWrite(ledPin, LOW);      // close the led
+                            //for(int fadeValue = 0 ; fadeValue <= 255; fadeValue +=5) { 
+                            //        analogWrite(ledPin, fadeValue);
+                            //        delay(30);                            
+                            //} 
+                            //analogWrite(ledPin, LOW);      // close the led
                    }
                    delay(1500);
           }
