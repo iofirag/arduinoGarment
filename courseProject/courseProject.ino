@@ -181,6 +181,7 @@ void loop()
            }
            else {    
                       analogWrite (vibPin, 255-training*51);
+                      analogWrite (vibPin, 255);
                       isVib=true;         
            }
            delay(500);
